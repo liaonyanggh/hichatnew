@@ -1,10 +1,10 @@
 var express = require('express'),
     app = express(),
-    server = require('http').createServer(app),
+    server = require('https').createServer(app),
     io = require('socket.io').listen(server),
     users=[];//保存所有在线用户的昵称
 app.use('/', express.static(__dirname + '/www'));
-server.listen(8082);
+server.listen(80);
 //socket部分
 io.on('connection', function(socket) {
     //昵称设置
